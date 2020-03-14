@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Elementsym_tofile.py'],
-             pathex=['/home/volker/PycharmProjects/qelectrotech_labels_to_file'],
+             pathex=['C:\\Users\\volker\\PycharmProjects\\qelectrotech_labels_to_file'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True )
+          console=False )

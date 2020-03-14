@@ -1,0 +1,21 @@
+Build options for Windows
+First install PySimpleGui
+    From Console: pip install pysimplegui
+    or with Pycharm.
+Install PyInstaller:
+    From Console: pip install pyinstaller
+    or with Pycharm
+
+download the sourcecode
+and then :
+
+pyinstaller -F --noconsole Elementsym_tofile.py
+
+this gives you a exe file in folder dist.
+
+
+
+Build option for linux
+install PySimpleGui and PyInstaller with pip
+then
+pyinstaller -F --noconsole Elementsym_tofile.py

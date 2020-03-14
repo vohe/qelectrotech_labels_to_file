@@ -61,8 +61,8 @@ def main():
         pass
     if platform == "win32":
         # Windows...
-        elementspath = os.path.join(os.getenv('APPDATA'), 'qet', 'elements')
-        # Todo: no extension for qet_directory in windows? is this right?
+        home = os.path.expanduser('~')
+        elementspath = os.path.join(home,'Application Data', 'qet', 'elements')
         qet_directory_name = 'qet_directory'
         qet_labels_name = os.path.join(elementspath, 'qet_labels.xml')
 
@@ -310,7 +310,7 @@ def main():
         if values['_language_']:
             language = values['_language_']
         # the button change is clicked and the action for this isn't yet started
-        if event is 'Change' and not window2_active:
+        if event == 'change' and not window2_active:
             # set the action as active
             window2_active = True
             # normaly just hide the window, but PySimpleGui could not refresh a treeview so....
@@ -334,13 +334,13 @@ def main():
             # normaly just hide the window, but PySimpleGui could not refresh a treeview so....
             # window.un_hide()
         # the button Save is clicked
-        if event is 'Save':
+        if event == 'save':
             save_as_xml(os.path.join(home, qet_labels_name))
         # the button help is clicked
-        if event is 'Help':
+        if event == 'help':
             show_help_messagebox()
         # the button Cancel is clicked
-        if event in (None, 'Cancel'):
+        if event in (None, 'cancel'):
             break
 
 if __name__ == "__main__":

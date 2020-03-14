@@ -308,7 +308,6 @@ def main():
         # set the language option
         if values['_language_']:
             language = values['_language_']
-            print('Lang: ', language)
         # the button change is clicked and the action for this isn't yet started
         if event is 'Change' and not window2_active:
             # set the action as active

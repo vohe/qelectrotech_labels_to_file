@@ -44,13 +44,15 @@ Afte your done, you save your work -  i modify's the qet_labels.xml file.
 - XML etree (pyhton)
 - XML Sax
 - README.md created under the hood of (https://github.com/jamesqquick/read-me-template)
+
 [Back To The Top](#Element-Labels)
 
 ---
 
 ## How To Use
 python Elementsym_tofile.py
-Look this smal video for more information (https://vimeo.com/user109668906/review/397627826/962f235e15)
+Look this smal video for more information
+(https://vimeo.com/user109668906/review/397627826/962f235e15)
 #### Installation
 
 just download and start
@@ -58,6 +60,7 @@ just download and start
 #### API Reference
 There is a internation version 0.5, in folder international. I try to translate some things.
 May someone i interestet to do this with me? Write a mail.
+
 ![Project Image](https://github.com/vohe/qelectrotech_labels_to_file/blob/master/howto/international_fr.png)
 ```html
     <p>not now</p>

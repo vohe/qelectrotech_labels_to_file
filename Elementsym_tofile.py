@@ -74,7 +74,7 @@ def main():
         def dir_as_less_xml(path):
             # set the begin of the file
             result = '<category name=%s>\n' % xml_quoteattr(os.path.basename(path))
-            prefix = ''
+            prefix = ' '
             for item in os.listdir(path):
                 itempath = os.path.join(path, item)
                 # if there is a (sub) dir in directory whe fist collect all subdirs in it
@@ -93,7 +93,8 @@ def main():
             # put the prefix into our xml file
             # prefix could be empty
             # in that case we go a template to edit later manually
-            result += '   <prefix>' + prefix + '</prefix>\n'
+            if prefix:
+                result += '   <prefix>' + prefix + '</prefix>\n'
             result += '</category>\n'
             return result
 
@@ -202,7 +203,7 @@ def main():
     # we parse this and look for an 'sy' entry with a value
     # and in this case return the value or none
     def get_symbol_for_directory(path):
-        symbol = 'none'
+        symbol = ' '
         lookfor = os.path.join(path, qet_directory_name)
         if os.path.isfile(lookfor):
             dom = ElementTree.parse(lookfor)

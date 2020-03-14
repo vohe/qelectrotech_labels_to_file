@@ -50,7 +50,7 @@ Afte your done, you save your work -  i modify's the qet_labels.xml file.
 
 ## How To Use
 python Elementsym_tofile.py
-
+Look this smal video for more information (https://vimeo.com/user109668906/review/397627826/962f235e15)
 #### Installation
 
 just download and start

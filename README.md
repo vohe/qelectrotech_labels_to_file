@@ -25,6 +25,8 @@ Qelectrotech stores all information about the (user-)elements in a file called '
 That is a file represent the whole filepath below users-appdata-qet/elements and for each of that incudet folder there could be a <prefix> tag in the xml file which is directly the label for a symbol in that directory.
 if no prefix is given, qelectrotech uses the one of the parent folder.
 
+![Project Image](https://github.com/vohe/qelectrotech_labels_to_file/blob/master/howto/add_folder_sy_tag.png)
+
 But inside qelectrotech there is no option to change or create this labels. The was - till now - is to modify or create the qet_labels.xml file.
 Therefor it is possible to add a language description for each folder inside of qelectrotech.
 That is the point we use to add our label! And a (fiction) language called sy (only two letters supported!) and you label tag for that folder. That's it.

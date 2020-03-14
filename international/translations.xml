@@ -1,0 +1,53 @@
+<index>
+  <main str="Change the value for">
+      <locale lang="de">Ändere den Wert für</locale>
+      <locale lang="en">Change the value for</locale>
+      <locale lang="fr">Modifiez la valeur de</locale>
+  </main>
+  <main str="Please give a two char text of your language (en)">
+      <locale lang="de">Geben Sie Ihre Sprache mit zwei Buchstaben an (de)</locale>
+      <locale lang="en">Please give a two char text of your language (en)</locale>
+      <locale lang="fr">Veuillez donner un texte à deux caractères de votre langue (fr)</locale>
+  </main>
+      <main str="Select the folder you want to change the symbol for">
+      <locale lang="de">Verzeichnis markieren zum ändern</locale>
+      <locale lang="en">Select the folder you want to change the symbol for</locale>
+      <locale lang="fr">Sélectionnez le dossier dont vous souhaitez modifier le symbole</locale>
+  </main>
+  <main str="symbol">
+      <locale lang="de">Symbol</locale>
+      <locale lang="en">symbol</locale>
+      <locale lang="fr">symbole</locale>
+  </main>
+  <main str="change">
+      <locale lang="de">ändern</locale>
+      <locale lang="en">change</locale>
+      <locale lang="fr">changement</locale>
+  </main>
+  <main str="help">
+      <locale lang="de">Hilfe</locale>
+      <locale lang="en">help</locale>
+      <locale lang="fr">Aidez-moi</locale>
+  </main>
+  <main str="save">
+      <locale lang="de">sichern</locale>
+      <locale lang="en">save</locale>
+      <locale lang="fr">enregistrer</locale>
+  </main>
+  <main str="cancel">
+      <locale lang="de">Ende</locale>
+      <locale lang="en">cancel</locale>
+      <locale lang="fr">Annuler</locale>
+  </main>
+  <main str="Folder to display">
+      <locale lang="de">Anzuzeigender Ordner</locale>
+      <locale lang="en">Folder to display</locale>
+      <locale lang="fr">Dossier à afficher</locale>
+  </main>
+  <main str="Modify element letter">
+      <locale lang="de">Bauteile Kennzeichen ändern</locale>
+      <locale lang="en">Modify element letter</locale>
+      <locale lang="fr">Modifier la lettre de l'élément</locale>
+  </main>
+
+</index>

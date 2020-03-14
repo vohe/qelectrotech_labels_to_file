@@ -56,6 +56,8 @@ Look this smal video for more information (https://vimeo.com/user109668906/revie
 just download and start
 
 #### API Reference
+There is a internation version 0.5, in folder international. I try to translate some things.
+May someone i interestet to do this with me? Write a mail.
 
 ```html
     <p>not now</p>

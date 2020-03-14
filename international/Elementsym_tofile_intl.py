@@ -23,7 +23,7 @@
 __author__ = "Volker Heggemann, Melle, DE"
 __copyright__ = "Copyright (C) 2020 Volker Heggemann"
 __license__ = "CC BY 3.0 DE"
-__version__ = "1.0"
+__version__ = "0.5"
 
 # import the stuff we use later
 import os
@@ -31,7 +31,8 @@ import sys
 from sys import platform
 from xml.etree import ElementTree
 from xml.sax.saxutils import quoteattr as xml_quoteattr
-# for more internationalisation try to use gettext
+# for more internationalisation we use translation
+from international.translation import translate
 
 # there a 2 versions of our GUI lib so we take the right one for our python version
 if sys.version_info[0] >= 3:
@@ -45,6 +46,10 @@ else:
 
 def main():
     """ Main program """
+    libraryfile = os.path.join(os.path.dirname(os.path.abspath((__file__))), 'translations.xml')
+    trans = translate(' ', locale='fr', path=libraryfile)
+
+
     # get the path with the user collection for qelectrotech
     elementspath = ''
     # in future we want to use this on all platforms (which is qelectrotech is build for)
@@ -247,13 +252,13 @@ def main():
                         [sg.InputText(old)],
                         [sg.Submit(), sg.Cancel()]]
         # show the messagebox window
-        wnd = sg.Window('Change the value for', changelayout)
+        wnd = sg.Window(trans.late('Change the value for'), changelayout)
         # wait for the buttons be clicked
         while True:
             # read the event values
             ev2, vals2 = wnd.read()
             # exit or windowclosed is clicked, nothing to get
-            if ev2 is None or ev2 == 'Exit':
+            if ev2 is None or ev2 == trans.late('Exit'):
                 wnd.close()
                 break
             wnd.close()
@@ -264,12 +269,12 @@ def main():
     # this is nessesary because we have to rebuild the treeview window any
     # time as we do changes on it
     def set_layout_for_mainwin():
-        layout = [[sg.Text('Please give a two char text of your language')],
+        layout = [[sg.Text(trans.late('Please give a two char text of your language'))],
                   [sg.InputText('de', key='_language_')],
-                  [sg.Text('Select the folder you want to change the symbol for')],
-                  [sg.Tree(data=treedata, headings=['symbol'], auto_size_columns=True, num_rows=20, col0_width=30,
+                  [sg.Text(trans.late('Select the folder you want to change the symbol for'))],
+                  [sg.Tree(data=treedata, headings=[trans.late('symbol')], auto_size_columns=True, num_rows=20, col0_width=30,
                            key='_TREE_', show_expanded=False, enable_events=True), ],
-                  [sg.Button('change'), sg.Button('save'), sg.Button('help'), sg.Button('cancel')]]
+                  [sg.Button(trans.late('change')), sg.Button(trans.late('save')), sg.Button(trans.late('help')), sg.Button(trans.late('cancel'))]]
         return layout
 
     # our main sequence starts here:
@@ -277,7 +282,7 @@ def main():
     # depending on our platform we could now show the path where the (user) elements stored
     # but may we got some more than one user or something has been changed we give the
     # oppotunity to select another path
-    starting_path = sg.PopupGetFolder('Folder to display', default_path=elementspath)
+    starting_path = sg.PopupGetFolder(trans.late('Folder to display'), default_path=elementspath)
 
     if not starting_path:
         exit()
@@ -298,7 +303,7 @@ def main():
     # Button line with four buttons
 
     layout1 = set_layout_for_mainwin()
-    window = sg.Window('Modify element letter').Layout(layout1)
+    window = sg.Window(trans.late('Modify element letter')).Layout(layout1)
 
     # go to th eevent lop of window 1
     while True:  # Event Loop
@@ -310,7 +315,7 @@ def main():
         if values['_language_']:
             language = values['_language_']
         # the button change is clicked and the action for this isn't yet started
-        if event is 'Change' and not window2_active:
+        if event is trans.late('Change') and not window2_active:
             # set the action as active
             window2_active = True
             # normaly just hide the window, but PySimpleGui could not refresh a treeview so....
@@ -330,17 +335,17 @@ def main():
             window2_active = False
             # create the layout for window 1 new
             layout1 = set_layout_for_mainwin()
-            window = sg.Window('Modify element letter').Layout(layout1)
+            window = sg.Window(trans.late('Modify element letter')).Layout(layout1)
             # normaly just hide the window, but PySimpleGui could not refresh a treeview so....
             # window.un_hide()
         # the button Save is clicked
-        if event is 'Save':
+        if event is trans.late('Save'):
             save_as_xml(os.path.join(home, qet_labels_name))
         # the button help is clicked
-        if event is 'Help':
+        if event is trans.late('Help'):
             show_help_messagebox()
         # the button Cancel is clicked
-        if event in (None, 'Cancel'):
+        if event in (None, trans.late('Cancel')):
             break
 
 if __name__ == "__main__":
